@@ -26,7 +26,7 @@ require "subdb"
 
 files = Subdb::ClientUtils.scan_paths($*)
 
-Subdb::ClientUtils.sync files, ["pt", "en"] do |action, arg|
+Subdb::ClientUtils.sync files, ["en"] do |action, arg|
   case action
   when :scan               then puts "Scanning #{arg[0]} [#{arg[1] + 1}/#{files.length}]"
   when :scanned            then puts "Hash: #{arg.hash}"
